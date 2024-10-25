@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';  // ئێرە گۆڕانکاری کرا
 import { Github, Linkedin, Mail, Send, CheckCircle, AlertCircle } from 'lucide-react';
 
+
 const Portfolio = () => {
   // Replace these with your actual Telegram bot token and chat ID
   const TELEGRAM_BOT_TOKEN = '7941329197:AAEUDVMrY9wLIApyMD8lOfWfujI7DqLbNGs';
@@ -244,30 +245,39 @@ const Portfolio = () => {
     <div className={`min-h-screen bg-gray-100 ${(language === 'ar' || language === 'ku') ? 'rtl' : 'ltr'}`}>
       <LanguageSelector />
       
-      {/* Hero Section */}
+      
       <section className="bg-white">
-        <div className="max-w-6xl mx-auto px-4 py-20">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold text-gray-800 mb-4">
-              {translations.title}
-            </h1>
-            <p className="text-xl text-gray-600 mb-8">
-              {translations.subtitle}
-            </p>
-            <div className="flex justify-center space-x-4">
-              <a href="https://github.com/Halwest446/Halwest446" className="text-gray-600 hover:text-gray-800">
-                <Github size={24} />
-              </a>
-              <a href="https://www.linkedin.com/in/halwest-abdullah-7766512a1/" className="text-gray-600 hover:text-gray-800">
-                <Linkedin size={24} />
-              </a>
-              <a href="mailto:halwestabdwla0@gmail.com" className="text-gray-600 hover:text-gray-800">
-                <Mail size={24} />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+  <div className="max-w-6xl mx-auto px-4 py-20">
+    <div className="text-center">
+      {/* Avatar Section - Added Here */}
+      <div className="mb-8">
+        <img 
+          src="/image.jpg" // Replace with your Bitmoji image path
+          alt="Halwest Avatar"
+          className="w-32 h-32 rounded-full border-4 border-blue-500 shadow-lg mx-auto hover:transform hover:scale-110 transition-all duration-200"
+        />
+      </div>
+
+      <h1 className="text-4xl font-bold text-gray-800 mb-4">
+        {translations.title}
+      </h1>
+      <p className="text-xl text-gray-600 mb-8">
+        {translations.subtitle}
+      </p>
+      <div className="flex justify-center space-x-4">
+        <a href="https://github.com/Halwest446/Halwest446" className="text-gray-600 hover:text-gray-800">
+          <Github size={24} />
+        </a>
+        <a href="https://www.linkedin.com/in/halwest-abdullah-7766512a1/" className="text-gray-600 hover:text-gray-800">
+          <Linkedin size={24} />
+        </a>
+        <a href="mailto:halwestabdwla0@gmail.com" className="text-gray-600 hover:text-gray-800">
+          <Mail size={24} />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Skills Section */}
       <section id="skills" className="bg-white py-20">
