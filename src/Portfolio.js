@@ -176,67 +176,101 @@ const Portfolio = () => {
 
   const LanguageSelector = () => (
     <div className="fixed top-4 right-4 flex gap-2 z-50">
+      {/* English Button */}
       <button 
         onClick={() => setLanguage('en')}
-        className={`px-3 py-1 rounded flex items-center gap-2 ${language === 'en' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+        className={`group relative px-3 py-1 rounded flex items-center gap-2 overflow-hidden transition-all ${
+          language === 'en' ? 'bg-blue-500 text-white' : 'bg-gray-200 hover:text-white'
+        }`}
       >
-        <svg className="w-4 h-4" viewBox="0 0 640 480">
-          <g fillRule="evenodd">
-            <path fill="#012169" d="M0 0h640v480H0z"/>
-            <path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/>
-            <path fill="#C8102E" d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/>
-            <path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/>
-            <path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"/>
-          </g>
-        </svg>
-        EN
+        {/* Cool hover effect background */}
+        <div className="absolute inset-0 w-full h-full transition-all duration-300 scale-0 group-hover:scale-100">
+          <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-400 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+          <div className="absolute inset-0 w-full h-full animate-sparkle" />
+        </div>
+        
+        {/* Content */}
+        <div className="relative flex items-center gap-2">
+          <svg className="w-4 h-4" viewBox="0 0 640 480">
+            <g fillRule="evenodd">
+              <path fill="#012169" d="M0 0h640v480H0z"/>
+              <path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/>
+              <path fill="#C8102E" d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/>
+              <path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/>
+              <path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"/>
+            </g>
+          </svg>
+          <span className="relative z-10">EN</span>
+        </div>
       </button>
+  
+      {/* Arabic Button */}
       <button 
         onClick={() => setLanguage('ar')}
-        className={`px-3 py-1 rounded flex items-center gap-2 ${language === 'ar' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+        className={`group relative px-3 py-1 rounded flex items-center gap-2 overflow-hidden transition-all ${
+          language === 'ar' ? 'bg-blue-500 text-white' : 'bg-gray-200 hover:text-white'
+        }`}
       >
-        <svg className="w-4 h-4" viewBox="0 0 640 480">
-          {/* ڕەنگی سور لە سەرەوە */}
-          <path fill="#CE1126" d="M0 0h640v160H0z"/>
-          {/* ڕەنگی سپی لە ناوەڕاست */}
-          <path fill="#FFFFFF" d="M0 160h640v160H0z"/>
-          {/* ڕەنگی ڕەش لە خوارەوە */}
-          <path fill="#000000" d="M0 320h640v160H0z"/>
-          {/* نووسینی بالله اکبر بە ڕەنگی سەوز و سایزی گەورەتر */}
-          <g transform="translate(320, 240)" fill="#007A3D">
-            <text 
-              fontSize="65"
-              fontFamily="Noto Kufi Arabic, Arial"
-              textAnchor="middle"
-              alignmentBaseline="middle"
-              fontWeight="bold"
-            >
-              الله اكبر
-            </text>
-          </g>
-        </svg>
-        عربي
+        {/* Cool hover effect background */}
+        <div className="absolute inset-0 w-full h-full transition-all duration-300 scale-0 group-hover:scale-100">
+          <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-400 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+          <div className="absolute inset-0 w-full h-full animate-sparkle" />
+        </div>
+        
+        {/* Content */}
+        <div className="relative flex items-center gap-2">
+          <svg className="w-4 h-4" viewBox="0 0 640 480">
+            <path fill="#CE1126" d="M0 0h640v160H0z"/>
+            <path fill="#FFFFFF" d="M0 160h640v160H0z"/>
+            <path fill="#000000" d="M0 320h640v160H0z"/>
+            <g transform="translate(320, 240)" fill="#007A3D">
+              <text 
+                fontSize="65"
+                fontFamily="Noto Kufi Arabic, Arial"
+                textAnchor="middle"
+                alignmentBaseline="middle"
+                fontWeight="bold"
+              >
+                الله اكبر
+              </text>
+            </g>
+          </svg>
+          <span className="relative z-10">عربي</span>
+        </div>
       </button>
+  
+      {/* Kurdish Button */}
       <button 
         onClick={() => setLanguage('ku')}
-        className={`px-3 py-1 rounded flex items-center gap-2 ${language === 'ku' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+        className={`group relative px-3 py-1 rounded flex items-center gap-2 overflow-hidden transition-all ${
+          language === 'ku' ? 'bg-blue-500 text-white' : 'bg-gray-200 hover:text-white'
+        }`}
       >
-        <svg className="w-4 h-4" viewBox="0 0 640 480">
-          <path fill="#ED1C24" d="M0 0h640v160H0z"/>
-          <path fill="#FFFFFF" d="M0 160h640v160H0z"/>
-          <path fill="#4CAF50" d="M0 320h640v160H0z"/>
-          <g transform="translate(320 240)">
-            <circle fill="#FFD700" r="45"/>
-            {Array.from({ length: 21 }).map((_, i) => (
-              <path
-                key={i}
-                fill="#FFD700"
-                d={`M ${45 * Math.cos((i * 2 * Math.PI) / 21)} ${45 * Math.sin((i * 2 * Math.PI) / 21)} L ${60 * Math.cos((i * 2 * Math.PI) / 21)} ${60 * Math.sin((i * 2 * Math.PI) / 21)}`}
-              />
-            ))}
-          </g>
-        </svg>
-        کوردی
+        {/* Cool hover effect background */}
+        <div className="absolute inset-0 w-full h-full transition-all duration-300 scale-0 group-hover:scale-100">
+          <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-400 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+          <div className="absolute inset-0 w-full h-full animate-sparkle" />
+        </div>
+        
+        {/* Content */}
+        <div className="relative flex items-center gap-2">
+          <svg className="w-4 h-4" viewBox="0 0 640 480">
+            <path fill="#ED1C24" d="M0 0h640v160H0z"/>
+            <path fill="#FFFFFF" d="M0 160h640v160H0z"/>
+            <path fill="#4CAF50" d="M0 320h640v160H0z"/>
+            <g transform="translate(320 240)">
+              <circle fill="#FFD700" r="45"/>
+              {Array.from({ length: 21 }).map((_, i) => (
+                <path
+                  key={i}
+                  fill="#FFD700"
+                  d={`M ${45 * Math.cos((i * 2 * Math.PI) / 21)} ${45 * Math.sin((i * 2 * Math.PI) / 21)} L ${60 * Math.cos((i * 2 * Math.PI) / 21)} ${60 * Math.sin((i * 2 * Math.PI) / 21)}`}
+                />
+              ))}
+            </g>
+          </svg>
+          <span className="relative z-10">کوردی</span>
+        </div>
       </button>
     </div>
   );
