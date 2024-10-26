@@ -299,7 +299,7 @@ const Portfolio = () => {
         {translations.subtitle}
       </p>
       <div className="flex justify-center space-x-4">
-        <a href="https://github.com/Halwest446/Halwest446" className="text-gray-600 hover:text-gray-800">
+        <a href="https://github.com/Halwest446" className="text-gray-600 hover:text-gray-800">
           <Github size={24} />
         </a>
         <a href="https://www.linkedin.com/in/halwest-abdullah-7766512a1/" className="text-gray-600 hover:text-gray-800">
